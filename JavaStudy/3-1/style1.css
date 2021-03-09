@@ -1,0 +1,47 @@
+style1.css
+
+.wrapper {
+	margin: 0 auto;
+	width: 400px;
+}
+
+.header {
+	height : 100px;
+	width: 400px;
+	background-color: #141f40;
+}
+
+.clearfix::after {
+	content: '';
+	display: block;
+	clear: both;
+}
+.main {
+	height: 250px;
+	width: 400px;
+}
+
+.left {
+	float: left;
+	height: 250px;
+	width: 150px;
+	background-color: #80bfa8;
+}
+
+.right {
+	float: right;
+	height: 250px;
+	width: 250px;
+	background-color: #8c2727;
+}
+
+.footer {
+	height: 100px;
+	width: 400px;
+	background-color: #d98d30;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
