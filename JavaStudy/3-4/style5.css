@@ -1,0 +1,87 @@
+
+	<body>
+		<header class="header"></header>
+		<main class="main">
+			<div class="top">
+				<div class="topleft"></div>
+				<div class="topcenter"></div>
+				<div class="topright"></div>
+			</div>
+			<div class="bottom">
+				<div class="bottomleft"></div>
+				<div class="bottomright"></div>
+			</div>
+		</main>
+		<footer class="footer"></footer>
+
+	</body>
+
+.wrapper {
+	height: 600px;
+	width: 600px;
+}
+
+.clearfix::after {
+	content: '';
+	display: block;
+	clear: both;
+}
+
+.header {
+	height: 150px;
+	width: 600px;
+	background-color: #FFFF00;
+}
+
+.top {
+	height: 150px;
+	width: 600px;
+}
+
+.bottom {
+	height: 150px;
+	width: 600px;
+}
+
+.topleft {
+	float: left;
+	height: 150px;
+	width: 200px;
+	background-color: #33FFFF;
+}
+
+
+.topcenter {
+	float: right;
+	height: 150px;
+	width: 200px;
+	background-color: #0000FF;
+}
+
+
+.topright {
+	float: right;
+	height: 150px;
+	width: 200px;
+	background-color: #FF0000;
+}
+
+.bottomleft {
+	float: left;
+	height: 150px;
+	width: 500px;
+	background-color: #00FF00;
+}
+
+.bottomright {
+	float: right;
+	height: 150px;
+	width: 100px;
+	background-color: #FF00FF;
+}
+
+.footer {
+	height: 150px;
+	width: 600px;
+	background-color: #33FFFF;
+}
