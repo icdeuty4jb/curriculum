@@ -108,7 +108,8 @@ public class ExException {
      * 例外処理のメッセージを出力
      * @param e 発生した例外
      */
-        System.out.println(CONST_MSG_NULLPO);
+    throw new NullPointerException(CONST_MSG_NULLPO);
+
     }
     private static void printException(final Exception e) {
         System.out.println(e);
