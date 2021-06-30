@@ -11,6 +11,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>検索結果</title>
+
 </head>
 <body>
  <div align="center">
@@ -24,7 +25,7 @@
  <td><%=employeeBean.getName()%></td>
  </tr>
  <tr>
- <th>コメント</th>
+ <th>コメント.</th>
  <td><%=employeeBean.getComment()%></td>
  </tr>
  <tr>
