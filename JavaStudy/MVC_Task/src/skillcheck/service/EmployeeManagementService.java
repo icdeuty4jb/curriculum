@@ -101,6 +101,8 @@ public final class EmployeeManagementService extends BaseService implements Empl
                         this.resultSet.getString("programingLanguage"),
                         this.resultSet.getString("comment"));
 
+                this.responseBean.setEmplyeeBeanList(empResultList);
+
                 // 社員情報リストへ追加
                 empResultList.add(employeeBean);
 
@@ -209,9 +211,11 @@ public final class EmployeeManagementService extends BaseService implements Empl
                     // [ここへ記述]
                     preparedStatement.setString(1, empId);
 
+
                     // FIXME Step-5-7: preparedStatementよりSQL(SELECT文)を実行し、resultSetへ結果を格納しなさい。
                     // [ここへ記述]
-                    this.resultSet = preparedStatement.executeQuery();
+
+                    resultSet = preparedStatement.executeQuery();
 
 
                     Logger.log(new Throwable(), "SQL: " +  this.preparedStatement.toString());
