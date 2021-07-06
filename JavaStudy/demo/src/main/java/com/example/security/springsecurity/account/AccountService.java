@@ -1,7 +1,5 @@
 package com.example.security.springsecurity.account;
 
-import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.*;
-
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +8,8 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+
 //問３－１ Serviceであることを表すアノテーションを記述
 @Service
 public class AccountService implements UserDetailsService {
@@ -47,7 +47,7 @@ public class AccountService implements UserDetailsService {
     @Transactional
     public void registerAdmin(String username, String password, String mailAddress) {
         //問３－３ 引数をもとにAccountクラスのインスタンスを生成する構文を記述（passwordはハッシュ化）
-
+        Account user = new Account(username, passwordEncoder.encode(password),mailAddress);
         user.setAdmin(true);
         //userをもとにadmin情報の登録か更新を行う
         repository.save(user);
