@@ -24,7 +24,7 @@
 
         // FIXME Step-2-1: リクエストよりレスポンスBeanを取得しなさい。
         // Tips: 正確な型（クラス）でキャストすること
-        responseBean = (ResponseBean) request.getAttribute("ResponseBean");
+        responseBean = (ResponseBean) request.getAttribute("responseBean");
 
         empResultList = responseBean.getEmplyeeBeanList();
         requestStatus = responseBean.getRequestStaus();
@@ -69,10 +69,10 @@
                 <!-- FIXME Step-2-3: 社員情報一覧に表示する内容を式（Expression）を用いて表示しなさい。 -->
                 <!-- Tips: ループにより取得したリスト内の社員情報Beanを使用すること -->
                 <td id="empId"><%=emp.getEmpId() %></td>
-                <td title="<%=emp.getName()%>"></td>
-                <td title="<%=emp.getMail()%>"></td>
-                <td title="<%=emp.getProgramingLanguage()%>"></td>
-                <td title="<%=emp.getComment()%>"></td>
+                <td title="name">"<%=emp.getName()%></td>
+                <td title="mail"><%=emp.getMail()%></td>
+                <td title="programinglanguage"><%=emp.getProgramingLanguage()%></td>
+                <td title="comment"><%=emp.getComment()%></td>
                 <td>
                     <form action="/MVC_Task/employee" method="get">
                         <input type="hidden" name="sender" value="/employeeResult.jsp"></input>

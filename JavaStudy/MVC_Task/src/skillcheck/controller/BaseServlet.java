@@ -38,7 +38,7 @@ public abstract class BaseServlet extends HttpServlet {
     /** ・リクエスト対象（リクエスト&レスポンスを渡す先）のjspファイル */
     protected static final String CONST_DESTINATION_LOGIN_JSP = "/MVC_Task/login.jsp";
     // FIXME Step-3-2: 実行結果表示用のjspファイルのパスを記述しなさい。
-    protected static final String CONST_DESTINATION_RESULT_JSP = "/MVC_Task/employeeResult.jsp";
+    protected static final String CONST_DESTINATION_RESULT_JSP = "/employeeResult.jsp";
 
     /* フィールド変数の定義 */
     /** フォーワード先 */
@@ -150,7 +150,7 @@ public abstract class BaseServlet extends HttpServlet {
             // Tips2: 完全一致検索の社員情報取得を呼び出すこと
             // Tips3: 第二引数の渡し方に注意すること
             EmployeeBean eb = new EmployeeBean(reqEmpId);
-            responseBean = ems.getEmployeeData(ExecuteCase.valueOf("FIND_BY_EMPID"),eb);
+            responseBean = ems.getEmployeeData(ExecuteCase.FIND_BY_EMPID,eb);
 
             // 最初の1件を取得
             resEmployeeBean = responseBean.getEmplyeeBeanList().stream().findFirst().orElse(null);
@@ -158,7 +158,7 @@ public abstract class BaseServlet extends HttpServlet {
             if (Objects.nonNull(resEmployeeBean)) {
                 // パスワードチェック
                 final String hashPassword = PasswordHashUtil.getSafetyPassword(reqPassword, reqEmpId);
-                if (resEmployeeBean.getPassword().equals(hashPassword)) {
+                if (resEmployeeBean.getPassword().equals(reqPassword)) {
                     // ログイン成功
                     this.destinationTarget = CONST_DESTINATION_RESULT_JSP;
                     message = ConstMessage.SUCCESS_LOGIN;
